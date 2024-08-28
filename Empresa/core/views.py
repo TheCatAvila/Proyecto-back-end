@@ -8,5 +8,11 @@ def index(request):
 def contacto(request):
     return render(request, 'core/contacto.html')
 
-def whoarewe(request):
-    return render(request, 'core/whoarewe.html')
+def about(request):
+    return render(request, 'core/about.html')
+
+def cart(request):
+    return render(request, 'core/cart.html')
+
+def blog(request):
+    return render(request, 'core/blog.html')
