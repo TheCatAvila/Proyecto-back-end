@@ -21,3 +21,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('core.urls')),
 ]
+
+# Confoguración del admin
+admin.site.site_title  = 'tittle'
+admin.site.site_header = 'header'
+admin.site.index_title = 'index_title'
