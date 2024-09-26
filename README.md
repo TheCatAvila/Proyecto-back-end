@@ -52,3 +52,37 @@ PASOS 3:
         return self.name
 
 8. admin.py: configurar en formato tabla los modelos
+
+-------------------------------------------------------
+
+django-admin startproject proyecto2
+cd proyecto2
+python manage.py startapp core
+python manage.py runserver
+
+from django.shortcuts import render
+
+# Create your views here.
+def index(request):
+    return render(request, 'core/index.html')
+
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', include('core.urls')),
+]
+
+from django.urls import path
+from .views import *
+
+urlpatterns = [
+    path('', index, name="index" ),
+]
+
+{% load static %}
+{% static 'core/ ' %}
+
+{% extends 'core/base.html' %}
+{% url 'login' %}
