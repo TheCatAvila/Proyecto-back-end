@@ -1,6 +1,5 @@
 from django.shortcuts import render
-
-# Create your views here.
+from .models import *
 
 def index(request):
     return render(request, 'core/index.html')
@@ -16,3 +15,16 @@ def cart(request):
 
 def blog(request):
     return render(request, 'core/blog.html')
+
+# CRUD
+def listProductos(request):
+    # SELECT * FROM empleados
+    listaProductos = Producto.objects.all()
+    datos = {
+        'listaProductos':listaProductos
+    }
+
+    return render(request, 'core/productos/list.html', datos)
+
+def addProducto(request):
+    return render(request, 'core/productos/add.html')

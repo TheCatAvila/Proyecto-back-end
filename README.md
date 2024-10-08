@@ -53,6 +53,23 @@ PASOS 3:
 
 8. admin.py: configurar en formato tabla los modelos
 
+Pasos 4
+
+1. Crear las views:
+    -add, update, delete, list, find, etc.
+
+2. Crear las vistas para cada View:
+    templates/core/empleados/add
+    templates/core/empleados/update
+    templates/core/empleados/list
+
+3. Crear los templates forms para los formularios:
+    - crear un archivo llamado forms.py
+
+4. Configurar todas las urls en urls.py
+
+5. Configurar los enlaces en el base
+
 -------------------------------------------------------
 
 django-admin startproject proyecto2

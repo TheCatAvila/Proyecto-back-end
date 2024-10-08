@@ -1,0 +1,21 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block titulo %} Productos {% endblock %}
+{% block breadcrumn %} desc about {% endblock %}
+
+{% block principal %}
+<link rel="stylesheet" href="{% static 'core/css/myStyles.css' %}">
+<div class="contenedor-productos m-5">
+    {% for producto in listaProductos %}
+    <div class="card m-3" style="width:200px">
+        <img class="card-img-top" src="img_avatar1.png" alt="Card image">
+        <div class="card-body">
+            <h4 class="card-title">{{ producto.nombre }}</h4>
+            <p class="card-text">{{ producto.description }}</p>
+            <p class="card-desc">${{ producto.precio }}</p>
+            <a href="#" class="btn btn-primary">Add to cart</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
