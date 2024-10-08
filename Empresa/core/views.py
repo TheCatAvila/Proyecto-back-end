@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import *
+from .forms import *
 
 def index(request):
     return render(request, 'core/index.html')
@@ -27,4 +28,14 @@ def listProductos(request):
     return render(request, 'core/productos/list.html', datos)
 
 def addProducto(request):
-    return render(request, 'core/productos/add.html')
+    datos = {
+        'form':ProductoForm()
+    }
+    
+    if request.method == 'POST':
+        formulario = ProductoForm(request.POST)
+        if formulario.is_valid():
+            formulario.save()
+            datos['msj'] = "Producto Guardado correctamente"
+    
+    return render(request, 'core/productos/add.html', datos)

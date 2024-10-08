@@ -3,4 +3,14 @@
 {% block titulo %} about us {% endblock %}
 {% block breadcrumn %} desc about {% endblock %}
 {% block principal %}
+
+<form method="POST">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Add">
+</form>
+
+
+{{ msj }}
+
 {% endblock %}
