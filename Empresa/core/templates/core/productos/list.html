@@ -14,7 +14,8 @@
             <h4 class="card-title">{{ producto.nombre }}</h4>
             <p class="card-text">{{ producto.description }}</p>
             <p class="card-desc">${{ producto.precio }}</p>
-            <a href="#" class="btn btn-primary">Add to cart</a>
+            <a href="{% url 'updateProducto' producto.id %}" class="btn btn-primary m-1">Modificar</a>
+            <a onclick="confirmDelete({{ producto.id }})" class="btn btn-primary m-1">Eliminar</a>
         </div>
     </div>
     {% endfor %}

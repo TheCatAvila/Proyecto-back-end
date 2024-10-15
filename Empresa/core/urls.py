@@ -13,4 +13,6 @@ urlpatterns = [
     # CRUD PRODUCTOS
     path('productos/', listProductos, name='listProductos'), # LISTAR PRODUCTOS
     path('add-producto/', addProducto, name='addProducto'), # ADD PRODUCTOS
+    path('updateProducto/<id>/', updateProducto, name='updateProducto'), # UPDATE PRODUCTOS
+    path('deleteProducto/<id>/', deleteProducto, name='deleteProducto'), # DELETE PRODUCTOS
 ]
